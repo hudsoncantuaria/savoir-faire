@@ -90,117 +90,23 @@ class SiteController extends Controller {
 	 *
 	 * @return mixed
 	 */
-	public function actionIndex($perPage = Certificate::PAGE_SIZE, $date = Certificate::DATE_ALL, $search = null, $changeStatus = false, $idCertificate = null, $description = false, $validate = false, $validated = true, $price = null, $city = null, $status = null, $reject = null, $page = null) {
+	public function actionIndex($perPage = Certificate::PAGE_SIZE, $page = null) {
 	    $post = Yii::$app->request->post();
+        Yii::$app->request->isAjax;
         
-        $hasFilter = !(
-            empty($city) &&
-            empty($city) &&
-            empty($city));
+        $filters = [
+            'page' => $page,
+            'perPage' => $perPage
+        ];
         
-        if($hasFilter) {
-            $page = 1;
-        }
-        
-		$typeFormUpload = !empty($post['type-form-upload']) ? $post['type-form-upload'] : false;
-  
-		$enclosurePageRules = is_null(Yii::$app->session->get('page') ) || $page != 'null' || !is_numeric(Yii::$app->session->get('page'));
-		if($enclosurePageRules) {
-		    $isNewValueByPagination = !is_null($page) && is_numeric($page) && $page>0;
-		    
-            if ($isNewValueByPagination) {
-                Yii::$app->session->set('page', $page);
-            }
-            
-            if(is_null(Yii::$app->session->get('page')))
-                Yii::$app->session->set('page', 1);
-        }
-        $page = Yii::$app->session->get('page');
-		
-		if (Yii::$app->user->isGuest)
-			return $this->redirect(['site/login']);
-   
-		// change certificate status?
-        $changeStatusByrequestAjax = $changeStatus  && empty($typeFormUpload) && Yii::$app->request->isAjax;
-		if ($changeStatusByrequestAjax){
-            
-            $get = Yii::$app->getRequest()->getQueryParams();
-            $hasFile = isset($get['file']) && is_array($get['file'] ) && !empty($get['file'] );
-            if($hasFile){
-                foreach ($get['file'] as $key => $file){
-                    $doc = Doc::findOne($key);
-        
-                    //Documents to print
-                }
-            }
-            
-			Certificate::changeStatus($idCertificate, $description, $validate, $validated, $price);
-            
-            header("Location:/site/index?page={$page}&per-page={$perPage}");
-            exit();
-        }
-        
-		// Official Certificate
-		if ($typeFormUpload == "certificate") {
-			$idCertificate = $post['id-certificates'];
-			$description = !empty($post['invoice-description']) ?? '';
-			$result = Certificate::uploadCertificate($idCertificate);
-			if($result == true) {
-				Certificate::changeStatus($idCertificate, $description, 1, 1);
-                $hasSubmit = true;
-			}
-		}
-        
-        
-        // one/multi certificate invoice generated
-        $isTypeFormInvoice = $typeFormUpload == "invoice";
-		if($isTypeFormInvoice)
-            Certificate::generateInvoice();
-        
-        $isTypeFormDraft = $typeFormUpload == "draft";
-		if ($isTypeFormDraft)
-			Certificate::changeStatus($post['idCertificate'], $post['description'], 1, 1, null);
-		
-		$isTypeFormSigaDraft = $typeFormUpload == "siga-draft-file";
-		if ($isTypeFormSigaDraft)
-			Certificate::generateDraftSiga();
-		
-		$isTypeFormDraft = $typeFormUpload == "draft-validation";
-		if ($isTypeFormDraft)
-			Certificate::generateDraftValidation();
-  
-		$isTypeFormValidated = $typeFormUpload == "validated-file";
-        if ($isTypeFormValidated)
-            Certificate::generateValidatedFile();
-        
-        $isTypeFormProve = $typeFormUpload == "prove-payment";
-        if ($isTypeFormProve)
-		    Certificate::generateProvePayment();
-        
-        if(Yii::$app->request->isPost){
-            header("Location:/site/index?page={$page}&per-page={$perPage}");
-            exit();
-        }else{
-            // prepare filters
-            $filters = [
-                'page' => $page,
-                'perPage' => $perPage,
-                'search' => $search,
-                'date' => $date,
-                'city' => $city,
-                'status' => $status,
-                'reject' => $reject
-            ];
-            
-            // get users provider
-            $certificatesProvider = Certificate::provider($perPage, $search, $date,[],false, $city, $status, $reject,$page);
-            return $this->render('index', [
-                'certificatesProvider' => $certificatesProvider,
-                'filters' => $filters,
-                'perPage' => $perPage,
-                'page' => $page
-            ]);
-        }
+        // get users provider
+        $certificatesProvider = Certificate::provider($perPage,$page);
+        return $this->render('index', [
+            'certificatesProvider' => $certificatesProvider,
+            'filters' => $filters,
+            'perPage' => $perPage,
+            'page' => $page
+        ]);
 	}
 	
 	/**
