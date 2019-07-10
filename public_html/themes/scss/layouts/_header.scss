@@ -1,0 +1,267 @@
+.main-header {
+  background-color: #0082af;
+}
+
+.contacts-link {
+  font-size: 16px;
+  text-align: right;
+  color: #ffffff;
+  text-transform: uppercase;
+  padding: 35px;
+  border-right: 1px solid #00739a;
+}
+
+.lang-select {
+  background-color: #0082af;
+  color: #ffffff;
+  text-transform: uppercase;
+  border: none;
+  padding: 30px;
+  font-size: 16px;
+}
+
+.user-name {
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: left;
+  color: #ffffff;
+}
+
+.user-company {
+  text-transform: uppercase;
+  font-size: 10px;
+  text-align: left;
+  color: #ffffff;
+}
+
+.user-login--wrapper {
+  cursor: pointer;
+  position: relative;
+  padding: 20px;
+  background-color: #00739a;
+
+  .selected {
+    position: relative;
+  }
+}
+
+.user-login--list {
+  position: absolute;
+  top: 92px;
+  z-index: 1;
+  width: 100%;
+  background-color: #00739a;
+  padding-left: 0px;
+  list-style-type: none;
+  margin-left: -20px;
+  li a {
+    @include transition;
+    cursor: pointer;
+    color: white;
+    text-transform: uppercase;
+    padding: 15px 10px 15px 20px;
+    display: block;
+    background-color: #0082af;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.25);
+    }
+  }
+}
+
+.lang-select {
+  cursor: pointer;
+}
+
+.caret-icon {
+  @include absolutecenter('y');
+  right: 0px;
+  z-index: 1;
+  color: white;
+}
+
+.second-nav {
+  background-color: #eff3f6;
+}
+
+.third-nav {
+  @include flexbox;
+  @include align-items(flex-end);
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+.second-nav--list {
+  padding-left: 0px;
+  list-style-type: none;
+  li {
+    position: relative;
+    margin-right: 30px;
+  }
+  li a {
+    font-size: 16px;
+    text-align: left;
+    color: #4d5152;
+    display: block;
+    width: 100%;
+    text-transform: uppercase;
+    padding: 15px 0px;
+    &:visited, &:focus, &:active {
+      text-decoration: none;
+    }
+    &:hover {
+      text-decoration: none;
+      &:after {
+        @include pseudo;
+        border-bottom: 4px solid #0082af;
+        bottom: 0px;
+        z-index: 13;
+        width: 100%;
+      }
+    }
+  }
+  .active {
+    font-weight: bold;
+
+    &:after {
+      @include pseudo;
+      border-bottom: 4px solid #0082af;
+      bottom: 0px;
+      z-index: 13;
+      width: 100%;
+    }
+  }
+}
+
+.search-icon {
+  @include absolutecenter('y');
+  right: 0px;
+  color: #c1c1c1;
+}
+
+.search-group {
+  margin-top: 30px;
+  margin-bottom: 0px !important;
+  position: relative;
+}
+
+.show-activity {
+  @include flexbox;
+  padding-left: 0;
+  list-style-type: none;
+  li {
+    margin-right: 10px;
+    &.active {
+      a {
+        color: #FFF;
+        background-color: #4d5152;
+      }
+    }
+  }
+}
+
+.show-activity--title {
+  font-size: 14px;
+  text-align: left;
+  color: #c1c1c1;
+  margin-bottom: 10px;
+}
+
+.show-activity--wrapper {
+  margin-left: 50px;
+}
+
+.menu-mobile--wrapper {
+  @include transition;
+  @include translateY(-100%);
+  background-color: #0082af;
+  position: absolute;
+  width: 100%;
+  top: 0px;
+  z-index: 15;
+
+  &.open {
+    @include translateY(0%);
+  }
+}
+
+.lang-mobile {
+  padding-left: 0px;
+  margin: 10px 0;
+  list-style-type: none;
+  li a {
+    background-color: #ffffff;
+    color: #00739a;
+    font-weight: bold;
+    padding: 5px;
+
+    &.active {
+      color: #fff;
+      background-color: transparent;
+    }
+  }
+}
+
+.user-info {
+  margin-top: 10px;
+  background-color: #00739a;
+  padding: 28px 30px;
+}
+
+.user-edit {
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-align: right;
+  float: right;
+  color: #ffffff;
+
+  &:hover {
+    color: #ffffff;
+  }
+}
+
+.mobile-items--list {
+  margin: 10px 0px;
+  padding-left: 0;
+  list-style-type: none;
+  li a {
+    padding: 10px 0px;
+    display: block;
+    font-size: 16px;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-align: center;
+
+    &.active {
+      background-color: #00739a;
+    }
+  }
+}
+
+.close-menu--icon {
+  cursor: pointer;
+  font-size: 16px;
+  color: #ffffff;
+  margin: 10px 0px;
+}
+
+.logout-mobile {
+  background-color: #00739a;
+  color: #ffffff;
+  text-align: center;
+  display: block;
+  text-transform: uppercase;
+  padding: 20px 0px;
+  font-size: 18px;
+  font-weight: bold;
+
+  &:hover {
+    color: #ffffff;
+  }
+}
+
+.burger-icon i {
+  cursor: pointer;
+}
+

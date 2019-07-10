@@ -1,0 +1,231 @@
+/* form starting stylings ------------------------------- */
+.group {
+  position: relative;
+  margin-bottom: 45px;
+  width: 100%;
+  margin-right: 20px;
+
+  &.threeHundredPx {
+    width: 300px;
+  }
+  &.thirtyPercent {
+    width: 30%;
+  }
+  &.thirtyThreePercent {
+    width: 33.333%;
+  }
+  &.seventyPercent {
+    width: 70%;
+  }
+  input {
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #757575;
+  }
+  input:focus {
+    outline: none;
+  }
+
+  /* LABEL ======================================= */
+  label {
+    color: #999;
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+  }
+  /* active state */
+  input:focus ~ label, input:valid ~ label {
+    top: -20px;
+    font-size: 14px;
+    color: #c1c1c1;
+  }
+  /* BOTTOM BARS ================================= */
+  .bar {
+    position: relative;
+    display: block;
+    width: 100%;
+  }
+
+  .bar:before, .bar:after {
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: 1px;
+    position: absolute;
+    background: #4d5152;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+  }
+  .bar:before {
+    left: 50%;
+  }
+  .bar:after {
+    right: 50%;
+  }
+
+  /* active state */
+  input:focus ~ .bar:before, input:focus ~ .bar:after {
+    width: 50%;
+  }
+
+}
+
+.select-custom {
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
+  width: 100%;
+  border-top: 0px solid transparent;
+  border-left: 0px solid transparent;
+  border-right: 0px solid transparent;
+}
+
+.select-custom:focus {
+  outline: none;
+}
+
+.btn-tertiary {
+  color: #4d5152;
+  padding: 0;
+  line-height: 40px;
+  display: block;
+  border-bottom: 2px solid #4d5152;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-radius: 0px;
+  text-align: left;
+  &:hover,
+  &:focus {
+    color: lighten(#555, 20%);
+    border-color: lighten(#555, 20%);
+  }
+}
+
+/* input file style */
+
+.input-file, .input-file2, .input-file3 {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+  + .js-labelFile {
+    @include flexbox;
+    @include justify-content(space-between);
+    @include align-items(center);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 0 10px;
+    cursor: pointer;
+    .icon:before {
+      content: "\f093";
+    }
+    &.has-file {
+      .icon:before {
+        content: "\f00c";
+        color: #5AAC7B;
+      }
+    }
+  }
+}
+
+.js-fileName {
+  font-size: 18px;
+  text-align: left;
+  color: #4d5152;
+}
+
+.btn:active {
+  box-shadow: none;
+}
+
+.with-value {
+  &.success {
+    input {
+      border-bottom: 2px solid #4d5152 !important;
+    }
+    i {
+      @include absolutecenter('y');
+      top: 35%;
+      right: 0;
+    }
+  }
+  &.error {
+    input {
+      border-bottom: 2px solid #e2342d !important;
+    }
+
+    .bar:before, .bar:after {
+      background: #e2342d;
+    }
+
+  }
+
+  .select-custom {
+    border-bottom: 2px solid #4d5152 !important;
+    color: #4d5152 !important;
+  }
+
+  label {
+    color: #4d5152;
+  }
+
+  input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #4d5152 !important;
+  }
+  input::-moz-placeholder { /* Firefox 19+ */
+    color: #4d5152 !important;
+  }
+  input:-ms-input-placeholder { /* IE 10+ */
+    color: #4d5152 !important;
+  }
+  input:-moz-placeholder { /* Firefox 18- */
+    color: #4d5152 !important;
+  }
+
+  .input-group-addon {
+    border-bottom: 2px solid #4d5152;
+    border-radius: 0px;
+  }
+
+  .fa-calendar {
+    color: #4d5152;
+  }
+
+  .currency-wrapper {
+    position: relative;
+    input {
+      color: #4d5152;
+    }
+    i {
+      right: 30px;
+    }
+  }
+
+  .chassi-description {
+    i {
+      position: absolute;
+      top: 50%;
+      right: 0;
+    }
+  }
+
+}
+
+#edit-certficate {
+  .icon-upload {
+    color: #4d5152;
+  }
+}

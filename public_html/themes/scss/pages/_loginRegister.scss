@@ -1,0 +1,176 @@
+.login, .register {
+  &.bg {
+    background-image: url('../images/bg-login.jpg');
+    width: 100%;
+    height: 94vh;
+    background-size: cover;
+  }
+}
+
+.border-bottom {
+  border-bottom: 1px solid white;
+}
+
+.login-modal--wrapper {
+  @include absolutecenter('both');
+  z-index: 1;
+  background-color: #0082af;
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.25);
+  width: 950px;
+}
+
+.register-modal--wrapper {
+  @include absolutecenter('both');
+  z-index: 1;
+  background-color: #ffffff;
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5);
+  width: 1116px;
+}
+
+.login.title {
+  font-size: 25px;
+  text-align: center;
+  color: #ffffff;
+  max-width: 250px;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
+.login-box {
+  padding: 35px;
+  &.green {
+    background-color: #0082af;
+  }
+  &.white {
+    background-color: white;
+  }
+}
+
+.pr {
+  position: relative;
+}
+.logo-login {
+  margin-bottom: 40px;
+}
+.email-login {
+  margin-top: 40px;
+  font-size: 18px;
+  text-align: center;
+  color: #ffffff;
+  text-transform: uppercase;
+  &:hover {
+    color: white;
+  }
+}
+
+.nopadding {
+  padding: 0;
+}
+
+.login-sentence {
+  font-size: 18px;
+  text-align: left;
+  color: #0082af;
+  margin: 40px 0px;
+  width: 230px;
+}
+
+.forgot-pass {
+  font-size: 14px;
+  text-align: left;
+  color: #4d5152;
+  text-transform: uppercase;
+}
+
+
+.new-user {
+  color: #b6b7af;
+  font-size: 18px;
+  text-transform: uppercase;
+  margin-right: 10px;
+}
+
+.register-request {
+  @include flexbox;
+  margin-top: 30px;
+  border-top: 1px solid #b6b7af;
+  padding-top: 35px;
+  &.on-page {
+    margin-top: 0px;
+    padding-top: 20px;
+  }
+}
+
+.request-access {
+  color: #0082af;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.overlay-wrapper {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+
+.overlay-left {
+  position: absolute;
+  left: 0px;
+  z-index: 1;
+  background-color: rgba(102, 142, 57, 0.95);
+  width: 50%;
+  height: 100%;
+}
+
+.overlay-right {
+  position: absolute;
+  z-index: 1;
+  right: 0px;
+  opacity: 0.95;
+  background-color: #ebece7;
+  width: 50%;
+  height: 100%;
+}
+
+.a {
+  fill: #fff;
+}
+
+.b {
+  fill: #e1342d;
+}
+
+.c {
+  fill: #f5e644;
+}
+
+.register-modal--wrapper {
+  padding: 10px 40px 25px 50px;
+  header {
+    margin: 20px 0px;
+  }
+}
+
+.register-request {
+
+  &.on-page {
+    margin-top: 0px;
+    padding-top: 20px;
+  }
+}
+
+.login-btn span {
+  font-weight: bold;
+}
+
+.register {
+  .select-custom {
+    color: #757575;
+  }
+}
+
+.logo-wrapper--register {
+  margin-bottom: 35px;
+}

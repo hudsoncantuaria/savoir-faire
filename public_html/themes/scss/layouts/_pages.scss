@@ -1,0 +1,117 @@
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  overflow-x: hidden;
+}
+
+ul {
+  margin-bottom: 0;
+}
+
+a, a:hover {
+  text-decoration: none;
+}
+
+.help-block {
+  &.red {
+    color: red;
+  }
+  &.green {
+    color: green;
+  }
+}
+
+.page-title {
+  text-transform: uppercase;
+  font-size: 30px;
+  text-align: center;
+  color: #020202;
+}
+
+.page-subtitle {
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: 500;
+  text-align: center;
+  color: #747474;
+  margin-top: 0;
+}
+
+.page-text {
+  text-align: center;
+}
+
+.page-description {
+  font-size: 16px;
+  color: #747474;
+  margin-top: 15px;
+}
+
+.small-title {
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: left;
+  color: #0082af;
+}
+
+.flex-it {
+  @include flexbox;
+}
+
+.justify-center {
+  @include justify-content(center);
+}
+
+.justify-between {
+  @include justify-content(space-between);
+}
+
+.flex-center {
+  @include flexbox;
+  @include justify-content(center);
+}
+
+.flex-direction--column {
+  @include flex-direction(column);
+}
+
+.flex-between {
+  @include flexbox;
+  @include justify-content(space-between);
+}
+
+.flex-end {
+  @include flexbox;
+  @include justify-content(flex-end);
+}
+
+.align-items--center {
+  @include align-items(center);
+}
+
+.width-full {
+  width: 100%;
+}
+
+.select-custom {
+  line-height: 25px
+}
+
+.certificates-btn {
+  &.tab {
+    margin-top: 5px;
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+.view-all--history-btn:focus, .back-to-list--btn:focus {
+  color: white;
+  text-decoration: none;
+}
+
+.show-activity--btn:focus {
+  color: #000;
+  text-decoration: none;
+}
+

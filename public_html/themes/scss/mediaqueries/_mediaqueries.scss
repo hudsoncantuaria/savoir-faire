@@ -1,0 +1,394 @@
+@media (min-width: 1400px) {
+  .bg-home > .bg-white {
+    width: 83.33333333%;
+    margin-left: 8.33333333%;
+  }
+}
+
+@media (max-width: 992px) {
+
+  .edit-profile--form {
+    .group {
+      width: 100%;
+    }
+  }
+
+  .form-item--title {
+    padding: 15px;
+  }
+
+  .form-item--body {
+    margin-top: 30px;
+    padding: 0;
+  }
+
+  .nopadding-mob {
+    padding: 0;
+  }
+
+  form {
+    margin-top: 30px;
+  }
+
+  .login-sentence {
+    width: 100%;
+  }
+
+  .register-request {
+    padding-top: 20px;
+  }
+
+  .register {
+    .select-custom {
+      color: #c1c1c1;
+    }
+    .group {
+      width: 100%;
+
+      input {
+        color: #c1c1c1;
+        border-color: #c1c1c1;
+      }
+    }
+
+  }
+
+  .d-block--mob {
+    display: block;
+  }
+
+  .burger-icon {
+    position: relative;
+    height: 100%;
+    @include flexbox;
+    @include align-items(center);
+    i {
+      color: #ffffff;
+      position: absolute;
+      top: 50%;
+      right: 0px;
+      margin-top: 35px;
+      font-size: 25px;
+    }
+  }
+
+  .group {
+    margin-right: 0;
+  }
+
+  .mobile-collapse {
+    @include flex-wrap(wrap);
+
+    & > .col-xs-12 {
+      padding: 0;
+    }
+  }
+
+  .contact-title {
+    margin-bottom: 20px;
+    margin-top: 30px;
+  }
+
+  .contacts-content > .container {
+    padding: 0 !important;
+  }
+
+  .btn-wrapper.send {
+    float: none !important;
+    margin: 0px 0px 20px 0px;
+  }
+
+  .send-btn {
+    @include flexbox;
+    @include justify-content(space-between);
+    @include align-items(center);
+    width: 100%;
+  }
+
+  .certificate-mobile--list li:nth-of-type(odd) {
+    background-color: #f3f5f7;
+  }
+
+  .certificate-mobile--list li, .certificate-mobile--list li a {
+    width: 100%;
+    float: left;
+    display: block;
+  }
+
+  .certificate-mobile--list li a {
+    padding: 20px 0px;
+  }
+
+  .magnif-icon {
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+    font-size: 18px;
+    text-align: right;
+    color: #0082af;
+  }
+
+  .certificate-status {
+    font-size: 14px;
+    font-weight: bold;
+    text-align: right;
+
+    &.in-process {
+      color: #4990e2;
+    }
+    &.complete, &.request {
+      color: #417505;
+    }
+    &.waiting, &.payable {
+      color: #d0011b;
+    }
+  }
+
+  .certificate-id--title {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: left;
+    color: #4d5152;
+    margin-right: 5px;
+  }
+
+  .certificate-id {
+    text-decoration: underline;
+  }
+
+  .certificate-mobile--list {
+    padding-left: 0;
+    list-style-type: none;
+    li {
+      position: relative;
+    }
+    li a {
+      color: #4d5152;
+      &:hover {
+        color: #4d5152;
+      }
+    }
+  }
+
+  .logo-header--mobile {
+    max-width: 170px;
+    padding: 20px 0px;
+  }
+
+  .mobile-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #4d5152;
+    padding: 15px 0px;
+    text-transform: uppercase;
+    text-align: center;
+    background-color: #eff3f6;
+  }
+
+  .bg-home {
+    position: relative;
+    background-image: none;
+    padding: 0px;
+  }
+
+  .table-wrapper {
+    margin-top: 0px;
+  }
+
+  .show-activity--wrapper {
+    margin-left: 0px;
+  }
+
+  .register-modal--wrapper {
+    padding: 0px;
+  }
+
+  .register-modal--wrapper {
+    position: static;
+    z-index: initial;
+    width: initial;
+    height: initial;
+    background-color: transparent;
+    right: initial;
+    left: initial;
+    box-shadow: none;
+    transform: none;
+    padding-top: 0px;
+    top: initial;
+  }
+
+  .overlay-wrapper {
+    position: static;
+    z-index: initial;
+    width: initial;
+    height: initial;
+  }
+  .overlay-left {
+    position: static;
+    z-index: initial;
+    width: initial;
+    height: initial;
+    background-color: transparent;
+    left: initial;
+  }
+  .overlay-right {
+    position: static;
+    z-index: initial;
+    width: initial;
+    height: initial;
+    background-color: transparent;
+    right: initial;
+  }
+  .login-modal--wrapper {
+    position: static;
+    z-index: initial;
+    width: initial;
+    height: initial;
+    background-color: transparent;
+    right: initial;
+    left: initial;
+    box-shadow: none;
+    transform: none;
+  }
+
+  .login.title {
+    max-width: initial;
+    margin-top: 0px;
+    font-size: 16px;
+  }
+
+  .login-sentence {
+    margin: 20px 0px;
+  }
+
+  .login.bg, .register.bg {
+    background-image: none;
+    height: initial;
+    background-size: initial;
+    position: static;
+  }
+
+  .footer-container {
+    @include flexbox;
+    @include justify-content(center);
+    @include align-items(center);
+    @include flex-wrap(wrap);
+  }
+
+  .copyright, .webcomum {
+    font-size: 10px;
+  }
+
+  .footer-wrap--item {
+    text-align: center;
+  }
+  .webcomum {
+    float: none;
+  }
+
+  .container.footer-container {
+    padding-top: 10px;
+  }
+
+  .login-box {
+    padding: 15px;
+  }
+
+  button.login-btn {
+    width: 100%;
+    @include flexbox;
+    @include justify-content(space-between);
+    @include align-items(center);
+  }
+
+  .login-btn span {
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .certificates-btn {
+    @include flexbox;
+    @include align-items(center);
+    font-size: 13px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+  .display-flex--sm-sb {
+    @include flexbox;
+    @include justify-content(space-between);
+  }
+
+  .nopadding-tab {
+    padding: 0;
+  }
+
+  .header-text--padding {
+    padding: 0px 10px;
+  }
+
+  .icons-certificates {
+    @include flex-direction(column);
+  }
+
+  .container {
+    width: initial;
+  }
+
+  .third-nav {
+    -webkit-box-direction: normal !important;
+    -webkit-box-orient: horizontal !important;
+    -webkit-flex-direction: row !important;
+    -moz-flex-direction: row !important;
+    -ms-flex-direction: row !important;
+    flex-direction: row !important;
+  }
+
+  .show-activity--wrapper {
+    @include align-items(center);
+    margin-top: 15px;
+    margin-bottom: 10px;
+  }
+  .certificates-btn {
+    margin-top: 20px;
+  }
+  .third-nav {
+    @include flex-direction(column);
+    @include justify-content(center);
+    @include align-items(center);
+
+    .search-group {
+      margin-top: 5px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+
+  .nopadding-mob {
+    padding: 0;
+  }
+
+  .sub-wrapper {
+    padding: 15px 5px;
+  }
+
+  .small-title--group {
+    margin-top: 0px;
+  }
+
+  .third-nav {
+    margin-bottom: 15px;
+    margin-top: 10px;
+  }
+
+  .small-menu--certificates {
+    padding-left: 0;
+  }
+
+}

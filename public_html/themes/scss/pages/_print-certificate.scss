@@ -1,0 +1,34 @@
+.print-certificate {
+  .inputs-wrapper {
+    position: relative !important;
+  }
+  .group input ~ label, .group input ~ label {
+    top: -20px !important;
+    font-size: 14px !important;
+    color: #c1c1c1 !important;
+  }
+
+  .select-custom {
+    color: #4d5152 !important;
+  }
+
+  ol li {
+    font-size: 20px;
+  }
+  .ft-list li, .chassis-list li {
+    border-bottom: none;
+  }
+  @media print {
+    .print-trigger {
+      display: none;
+    }
+    .form-item:nth-of-type(2n) {
+      page-break-after: always;
+    }
+  }
+  .ft-list, .chassis-list {
+    padding-left: 0;
+    list-style-type: decimal !important;
+    margin-top: 29px;
+  }
+}
